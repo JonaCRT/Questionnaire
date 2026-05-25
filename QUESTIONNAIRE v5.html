@@ -1,0 +1,1217 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>האם אתם צריכים תרגיל שולחני? | Critical Impact</title>
+<meta property="og:title" content="האם הארגון שלך באמת צריך תרגיל שולחני?">
+<meta property="og:description" content="11 שאלות. 3 דקות. תשובה ברורה על רמת המוכנות שלך לאירוע סייבר — Critical Impact">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://www.crt-imp.com/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<!-- LinkedIn Insight Tag -->
+<script type="text/javascript">
+  _linkedin_partner_id = "27555625";
+  window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+  window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+</script>
+<script type="text/javascript">
+  (function(l) {
+    if (!l){window.lintrk = function(a,b){window.lintrk.q.push([a,b])};
+    window.lintrk.q=[]}
+    var s = document.getElementsByTagName("script")[0];
+    var b = document.createElement("script");
+    b.type = "text/javascript"; b.async = true;
+    b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+    s.parentNode.insertBefore(b, s);
+  })(window.lintrk);
+</script>
+<noscript><img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=27555625&fmt=gif"/></noscript>
+
+<style>
+/* ============================================================
+   TOKENS
+============================================================ */
+:root {
+  --red:      #D61020;
+  --red-dark: #a00c18;
+  --red-mid:  #ff1a28;
+  --red-glow: rgba(214,16,32,0.25);
+  --gold:     #f0c040;
+  --green:    #3dba7a;
+  --black:    #000000;
+  --b1:       #080808;
+  --b2:       #0e0e0e;
+  --b3:       #161616;
+  --b4:       #1e1e1e;
+  --border:   #1c1c1c;
+  --border2:  #282828;
+  --text:     #e0e0e0;
+  --muted:    #666;
+  --white:    #ffffff;
+}
+
+/* ============================================================
+   BASE
+============================================================ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Heebo', sans-serif;
+  background-color: var(--black);
+  /* subtle red dot grid */
+  background-image: radial-gradient(rgba(214,16,32,0.07) 1px, transparent 1px);
+  background-size: 28px 28px;
+  color: var(--text);
+  min-height: 100vh;
+  direction: rtl;
+  overflow-x: hidden;
+}
+
+/* scanline overlay */
+body::before {
+  content: '';
+  position: fixed; inset: 0; z-index: 0; pointer-events: none;
+  background: repeating-linear-gradient(
+    0deg, transparent, transparent 3px,
+    rgba(0,0,0,0.06) 3px, rgba(0,0,0,0.06) 4px
+  );
+}
+
+/* top ambient red glow */
+body::after {
+  content: '';
+  position: fixed; top: 0; left: 0; right: 0; height: 50vh;
+  z-index: 0; pointer-events: none;
+  background: radial-gradient(ellipse 80% 60% at 50% -10%, rgba(214,16,32,0.14) 0%, transparent 70%);
+}
+
+/* ============================================================
+   KEYBOARD HINT
+============================================================ */
+#kbd-hint {
+  position: fixed; bottom: 28px; left: 28px; z-index: 200;
+  background: rgba(8,8,8,0.95); border: 1px solid #2a2a2a;
+  border-radius: 6px; padding: 10px 16px;
+  font-size: 12px; color: var(--muted);
+  display: flex; align-items: center; gap: 10px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.7), 0 0 0 1px rgba(214,16,32,0.1);
+  transition: opacity 0.5s, transform 0.5s;
+}
+#kbd-hint.hidden { opacity: 0; transform: translateY(6px); pointer-events: none; }
+.kbd {
+  display: inline-block; background: #1a1a1a; border: 1px solid #333;
+  border-bottom: 2px solid #444; border-radius: 3px;
+  padding: 1px 6px; font-size: 11px; font-weight: 800; color: var(--white);
+  letter-spacing: 0.5px;
+}
+
+/* ============================================================
+   HEADER
+============================================================ */
+header {
+  position: relative; z-index: 50;
+  padding: 18px 48px;
+  display: flex; align-items: center; justify-content: space-between;
+  background: rgba(0,0,0,0.9); backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(214,16,32,0.2);
+  box-shadow: 0 1px 0 rgba(214,16,32,0.1);
+}
+.logo { display: flex; align-items: center; gap: 14px; }
+.logo-mark {
+  width: 38px; height: 38px; background: var(--red);
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 900; font-size: 16px; color: white; letter-spacing: -1px;
+  clip-path: polygon(0 0, 100% 0, 100% 72%, 72% 100%, 0 100%);
+  box-shadow: 0 0 20px rgba(214,16,32,0.5);
+}
+.logo-text { font-size: 14px; font-weight: 800; letter-spacing: 1px; color: var(--white); text-transform: uppercase; }
+.logo-sub  { font-size: 10px; color: var(--muted); font-weight: 400; letter-spacing: 0.5px; margin-top: 1px; }
+.header-contact { font-size: 13px; color: var(--muted); }
+.header-contact a { color: var(--red); text-decoration: none; font-weight: 700; transition: color 0.2s; }
+.header-contact a:hover { color: var(--red-mid); }
+
+/* ============================================================
+   PROGRESS
+============================================================ */
+.progress-wrap {
+  position: sticky; top: 0; z-index: 40;
+  background: rgba(0,0,0,0.97); backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+  padding: 10px 48px; display: flex; align-items: center; gap: 16px;
+}
+.progress-bar-track {
+  flex: 1; height: 3px; background: #1a1a1a; border-radius: 2px; overflow: visible;
+}
+.progress-bar-fill {
+  height: 100%; background: var(--red); border-radius: 2px;
+  transition: width 0.4s ease;
+  width: 0%; position: relative;
+  box-shadow: 0 0 8px var(--red), 0 0 20px rgba(214,16,32,0.4);
+}
+/* glowing dot at end of bar */
+.progress-bar-fill::after {
+  content: '';
+  position: absolute; right: -3px; top: 50%; transform: translateY(-50%);
+  width: 7px; height: 7px; border-radius: 50%; background: var(--red-mid);
+  box-shadow: 0 0 8px var(--red), 0 0 16px rgba(214,16,32,0.6);
+  opacity: 0; transition: opacity 0.3s;
+}
+.progress-bar-fill[style*="width: 0"]:after { opacity: 0; }
+.progress-bar-fill:not([style*="width: 0%"])::after { opacity: 1; }
+
+.progress-text  { font-size: 11px; color: var(--muted); white-space: nowrap; font-weight: 600; letter-spacing: 0.5px; }
+.progress-tally { font-size: 11px; color: var(--red); font-weight: 800; opacity: 0; transition: opacity 0.3s; white-space: nowrap; }
+.progress-tally.visible { opacity: 1; }
+
+/* ============================================================
+   HERO
+============================================================ */
+.hero {
+  position: relative; z-index: 1;
+  padding: 100px 48px 72px; max-width: 900px; margin: 0 auto; text-align: center;
+  overflow: hidden;
+}
+
+/* CI watermark */
+.hero::before {
+  content: 'CI';
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  font-size: 420px; font-weight: 900; letter-spacing: -20px; line-height: 1;
+  color: rgba(214,16,32,0.04); pointer-events: none; user-select: none;
+  white-space: nowrap;
+}
+
+/* red ambient pulse */
+.hero-glow {
+  position: absolute; top: -60px; left: 50%; transform: translateX(-50%);
+  width: 700px; height: 400px; pointer-events: none;
+  background: radial-gradient(ellipse, rgba(214,16,32,0.18) 0%, transparent 70%);
+  animation: heroPulse 5s ease-in-out infinite;
+}
+@keyframes heroPulse {
+  0%, 100% { opacity: 0.6; transform: translateX(-50%) scale(1); }
+  50%       { opacity: 1;   transform: translateX(-50%) scale(1.05); }
+}
+
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(214,16,32,0.1);
+  border: 1px solid rgba(214,16,32,0.4);
+  color: var(--red-mid); font-size: 11px; font-weight: 800;
+  letter-spacing: 3px; text-transform: uppercase;
+  padding: 7px 18px; margin-bottom: 36px;
+  position: relative; z-index: 1;
+}
+.hero-badge::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--red); box-shadow: 0 0 6px var(--red); animation: blink 1.4s ease-in-out infinite; }
+@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+
+h1 {
+  position: relative; z-index: 1;
+  font-size: clamp(36px, 5.5vw, 62px);
+  font-weight: 900; line-height: 1.08;
+  color: var(--white); margin-bottom: 24px; letter-spacing: -2px;
+}
+h1 span {
+  color: var(--red);
+  text-shadow: 0 0 40px rgba(214,16,32,0.5);
+}
+
+.hero-divider {
+  display: flex; align-items: center; gap: 16px;
+  max-width: 560px; margin: 0 auto 20px; position: relative; z-index: 1;
+}
+.hero-divider::before, .hero-divider::after {
+  content: ''; flex: 1; height: 1px;
+  background: linear-gradient(to center, transparent, rgba(214,16,32,0.3));
+}
+.hero-sub {
+  font-size: 20px; color: #777; font-weight: 400; line-height: 1.65; flex: none;
+  text-align: center;
+}
+.hero-sub strong {
+  color: #aaa; font-weight: 800;
+}
+.hero-sub-stats {
+  font-size: 22px; font-weight: 600; color: #888;
+}
+
+.hero-note {
+  position: relative; z-index: 1;
+  font-size: 12px; color: #444; letter-spacing: 0.5px;
+  border-top: 1px solid var(--border); padding-top: 24px; margin-top: 36px;
+}
+
+/* ============================================================
+   QUESTIONS
+============================================================ */
+.questions-wrap {
+  position: relative; z-index: 1;
+  max-width: 780px; margin: 0 auto;
+  padding: 40px 48px 80px;
+  transition: opacity 0.5s, filter 0.5s;
+}
+.questions-wrap.dimmed { opacity: 0.3; pointer-events: none; filter: blur(2px); }
+
+/* SECTION LABELS */
+.section-label {
+  display: flex; align-items: center; gap: 14px;
+  margin: 56px 0 20px;
+}
+.section-label-bar {
+  width: 4px; height: 18px; background: var(--red); flex-shrink: 0; border-radius: 2px;
+  box-shadow: 0 0 10px rgba(214,16,32,0.8), 0 0 20px rgba(214,16,32,0.3);
+}
+.section-label-text {
+  font-size: 16px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--white);
+  white-space: nowrap;
+}
+.section-label-line {
+  flex: 1; height: 1px;
+  background: linear-gradient(to left, transparent, rgba(214,16,32,0.25));
+}
+
+/* QUESTION CARD */
+.question-card {
+  position: relative; overflow: hidden;
+  background: var(--b1); border: 1px solid var(--border);
+  padding: 24px 28px; margin-bottom: 10px;
+  display: flex; align-items: flex-start; gap: 20px;
+  transition: border-color 0.25s, background 0.25s, box-shadow 0.3s, opacity 0.3s;
+  animation: fadeUp 0.4s ease both;
+}
+/* watermark number */
+.question-card::after {
+  content: attr(data-q);
+  position: absolute; left: -12px; top: 50%; transform: translateY(-50%);
+  font-size: 130px; font-weight: 900; letter-spacing: -8px; line-height: 1;
+  color: rgba(214,16,32,0.05); pointer-events: none; user-select: none;
+  transition: color 0.3s;
+}
+.question-card:hover { border-color: #2a2a2a; background: var(--b2); }
+.question-card:hover::after { color: rgba(214,16,32,0.08); }
+
+.question-card.answered-yes {
+  border-color: rgba(214,16,32,0.3);
+  background: rgba(214,16,32,0.04); opacity: 0.8;
+}
+.question-card.answered-no  { border-color: #181818; opacity: 0.7; }
+
+.question-card.active-question {
+  border-color: var(--red);
+  border-right-width: 3px;
+  background: var(--b2);
+  opacity: 1 !important;
+  box-shadow:
+    0 0 0 1px rgba(214,16,32,0.15),
+    0 8px 40px rgba(214,16,32,0.18),
+    0 0 60px rgba(214,16,32,0.06);
+}
+.question-card.active-question::after { color: rgba(214,16,32,0.1); }
+.question-card.active-question .q-num { color: var(--red); text-shadow: 0 0 10px rgba(214,16,32,0.6); }
+
+@keyframes focusPulse {
+  0%   { box-shadow: 0 0 0 0 rgba(214,16,32,0.6); }
+  70%  { box-shadow: 0 0 0 8px rgba(214,16,32,0); }
+  100% { box-shadow: 0 0 0 0 rgba(214,16,32,0); }
+}
+.question-card.just-focused { animation: focusPulse 0.7s ease forwards; }
+
+.q-num {
+  font-size: 10px; font-weight: 900; color: #333; min-width: 28px;
+  margin-top: 3px; letter-spacing: 1px; transition: color 0.2s, text-shadow 0.2s;
+}
+.q-text { flex: 1; font-size: 16px; font-weight: 400; line-height: 1.6; color: var(--text); }
+.q-text strong { font-weight: 800; color: var(--white); }
+
+/* BUTTONS */
+.q-buttons { display: flex; gap: 10px; margin-top: 16px; }
+
+.btn-yn {
+  position: relative; overflow: hidden;
+  padding: 10px 32px; font-family: 'Heebo', sans-serif;
+  font-size: 14px; font-weight: 800; letter-spacing: 0.5px;
+  border-radius: 2px; cursor: pointer; transition: all 0.2s;
+  min-width: 88px;
+}
+.btn-yn-yes {
+  background: transparent; border: 1px solid #2a2a2a; color: var(--muted);
+}
+.btn-yn-yes:hover { border-color: var(--red); color: var(--white); background: rgba(214,16,32,0.08); }
+.btn-yn-yes.active-yes { background: var(--red); border-color: var(--red); color: white; box-shadow: 0 0 16px rgba(214,16,32,0.5); }
+
+.btn-yn-no {
+  background: transparent; border: 1px solid #2a2a2a; color: var(--muted);
+}
+.btn-yn-no:hover { border-color: #444; color: var(--white); background: rgba(255,255,255,0.04); }
+.btn-yn-no.active-no { background: #1c1c1c; border-color: #3a3a3a; color: var(--text); }
+
+/* legacy class support */
+.btn-yn { background: transparent; border: 1px solid #2a2a2a; color: var(--muted); }
+.btn-yn:hover { border-color: var(--red); color: var(--white); background: rgba(214,16,32,0.06); }
+.btn-yn.active-yes { background: var(--red); border-color: var(--red); color: white; box-shadow: 0 0 16px rgba(214,16,32,0.5); }
+.btn-yn.active-no  { background: #181818; border-color: #333; color: var(--text); }
+
+.ripple-span {
+  position: absolute; border-radius: 50%; background: rgba(255,255,255,0.2);
+  transform: scale(0); animation: rippleAnim 0.55s linear; pointer-events: none;
+}
+@keyframes rippleAnim { to { transform: scale(4); opacity: 0; } }
+
+/* ============================================================
+   SUBMIT
+============================================================ */
+.submit-wrap {
+  margin-top: 56px; padding-top: 40px;
+  border-top: 1px solid var(--border);
+  display: flex; flex-direction: column; align-items: center; gap: 20px;
+}
+.submit-note { font-size: 12px; color: #444; letter-spacing: 0.5px; }
+
+.btn-submit {
+  background: var(--red); color: white;
+  font-family: 'Heebo', sans-serif; font-size: 17px; font-weight: 900;
+  padding: 20px 60px; border: none; cursor: pointer; letter-spacing: 0.5px;
+  transition: background 0.2s, transform 0.1s, box-shadow 0.2s;
+  display: inline-flex; align-items: center; gap: 12px;
+  box-shadow: 0 4px 24px rgba(214,16,32,0.4);
+}
+.btn-submit:hover    { background: var(--red-mid); box-shadow: 0 6px 32px rgba(214,16,32,0.6); transform: translateY(-1px); }
+.btn-submit:active   { transform: scale(0.98) translateY(0); }
+.btn-submit:disabled { background: #1a1a1a; color: #333; cursor: not-allowed; box-shadow: none; }
+
+/* ============================================================
+   RESULT
+============================================================ */
+#result-section {
+  display: none; position: relative; z-index: 1;
+  max-width: 780px; margin: 0 auto; padding: 0 48px 100px;
+}
+#result-section.visible { display: block; animation: fadeUp 0.5s ease both; }
+
+.result-box { border: 1px solid #2a2a2a; overflow: hidden; }
+
+.result-header {
+  background: linear-gradient(160deg, #1a0005 0%, #0d0002 60%, #000 100%);
+  padding: 48px 36px 40px; text-align: center; position: relative; overflow: hidden;
+  border-bottom: 1px solid rgba(214,16,32,0.3);
+}
+.result-header::before {
+  content: '';position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(214,16,32,0.25) 0%, transparent 70%);
+}
+.result-header.level-mid  { background: linear-gradient(160deg, #1a1200 0%, #0d0a00 60%, #000 100%); border-bottom-color: rgba(240,192,64,0.2); }
+.result-header.level-mid::before  { background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(240,192,64,0.15) 0%, transparent 70%); }
+.result-header.level-low  { background: linear-gradient(160deg, #001208 0%, #000d05 60%, #000 100%); border-bottom-color: rgba(61,186,122,0.2); }
+.result-header.level-low::before  { background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(61,186,122,0.12) 0%, transparent 70%); }
+
+@keyframes urgencyPulse {
+  0%, 100% { background: linear-gradient(160deg, #1a0005 0%, #0d0002 60%, #000 100%); }
+  50%       { background: linear-gradient(160deg, #240008 0%, #120004 60%, #000 100%); }
+}
+.result-header.level-high { animation: urgencyPulse 3s ease-in-out infinite; }
+
+.score-ring-wrap { position: relative; width: 180px; height: 180px; margin: 0 auto 24px; }
+.ring-svg   { display: block; transform: rotate(-90deg); }
+.ring-bg    { fill: none; stroke: rgba(255,255,255,0.06); stroke-width: 8; }
+.ring-fill  {
+  fill: none; stroke-width: 8; stroke-linecap: round;
+  stroke-dasharray: 471; stroke-dashoffset: 471;
+  transition: stroke-dashoffset 1.3s cubic-bezier(0.4,0,0.2,1);
+  filter: drop-shadow(0 0 6px currentColor);
+}
+.ring-fill.ring-high { stroke: var(--red); }
+.ring-fill.ring-mid  { stroke: var(--gold); }
+.ring-fill.ring-low  { stroke: var(--green); }
+
+.score-overlay { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.score-num   { font-size: 72px; font-weight: 900; color: white; line-height: 1; letter-spacing: -4px; }
+.score-denom { font-size: 12px; color: rgba(255,255,255,0.4); margin-top: 4px; letter-spacing: 1px; }
+
+.result-verdict { font-size: 22px; font-weight: 800; line-height: 1.2; margin-bottom: 10px; }
+.result-verdict.verdict-high { color: var(--red-mid); text-shadow: 0 0 30px rgba(214,16,32,0.4); }
+.result-verdict.verdict-mid  { color: var(--gold); }
+.result-verdict.verdict-low  { color: var(--green); }
+.result-time { font-size: 11px; color: rgba(255,255,255,0.3); letter-spacing: 0.5px; }
+
+.result-body { background: var(--b1); padding: 40px; }
+.result-body > * { opacity: 0; transform: translateY(14px); transition: opacity 0.45s ease, transform 0.45s ease; }
+.result-body > *.revealed { opacity: 1; transform: translateY(0); }
+.result-text { font-size: 16px; line-height: 1.75; color: #aaa; margin-bottom: 36px; }
+.result-text strong { color: var(--white); }
+
+/* BREAKDOWN */
+.breakdown-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 32px; }
+.breakdown-card { background: var(--b2); border: 1px solid var(--border); padding: 16px 18px; }
+.breakdown-label { font-size: 10px; font-weight: 700; color: #444; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px; }
+.breakdown-bar-track { height: 3px; background: #1a1a1a; margin-bottom: 10px; overflow: hidden; }
+.breakdown-bar-fill  { height: 100%; width: 0%; transition: width 1s cubic-bezier(0.4,0,0.2,1) 0.4s; }
+.breakdown-bar-fill.fill-red   { background: var(--red); box-shadow: 0 0 8px rgba(214,16,32,0.6); }
+.breakdown-bar-fill.fill-gold  { background: var(--gold); }
+.breakdown-bar-fill.fill-green { background: var(--green); }
+.breakdown-score { font-size: 22px; font-weight: 900; color: var(--white); display: flex; align-items: baseline; gap: 4px; }
+.breakdown-score span { font-size: 11px; font-weight: 400; color: #444; }
+
+/* CTA */
+.cta-block { background: var(--b2); border: 1px solid var(--border2); padding: 32px; margin-top: 4px; }
+.cta-title { font-size: 20px; font-weight: 800; color: var(--white); margin-bottom: 8px; }
+.cta-sub   { font-size: 14px; color: #666; margin-bottom: 28px; line-height: 1.6; }
+.cta-buttons { display: flex; gap: 12px; flex-wrap: wrap; }
+
+.cta-btn-primary {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--red); color: white;
+  font-family: 'Heebo', sans-serif; font-size: 15px; font-weight: 800;
+  padding: 16px 32px; border: none; cursor: pointer;
+  text-decoration: none; transition: all 0.2s;
+  box-shadow: 0 4px 20px rgba(214,16,32,0.35);
+}
+.cta-btn-primary:hover { background: var(--red-mid); box-shadow: 0 6px 28px rgba(214,16,32,0.55); transform: translateY(-1px); }
+
+.cta-btn-secondary {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: transparent; color: var(--text);
+  font-family: 'Heebo', sans-serif; font-size: 15px; font-weight: 600;
+  padding: 16px 32px; border: 1px solid #333; cursor: pointer;
+  text-decoration: none; transition: all 0.2s;
+}
+.cta-btn-secondary:hover { border-color: var(--red); color: var(--white); background: rgba(214,16,32,0.05); }
+
+.divider-contact {
+  margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--border);
+  font-size: 13px; color: #555; display: flex; gap: 24px; flex-wrap: wrap;
+}
+.divider-contact a { color: var(--red); text-decoration: none; font-weight: 700; }
+
+.result-actions {
+  display: flex; align-items: center; justify-content: center;
+  gap: 12px; margin-top: 32px; padding-top: 28px; border-top: 1px solid var(--border);
+}
+.btn-share {
+  display: inline-flex; align-items: center; gap: 7px;
+  background: transparent; color: #555;
+  font-family: 'Heebo', sans-serif; font-size: 13px; font-weight: 600;
+  padding: 10px 20px; border: 1px solid var(--border2); cursor: pointer; transition: all 0.2s;
+}
+.btn-share:hover  { border-color: var(--red); color: var(--white); }
+.btn-share.copied { border-color: var(--green); color: var(--green); }
+.btn-reset {
+  background: transparent; color: #555;
+  font-family: 'Heebo', sans-serif; font-size: 13px; font-weight: 600;
+  padding: 10px 20px; border: 1px solid var(--border); cursor: pointer; transition: all 0.2s;
+}
+.btn-reset:hover { border-color: #444; color: var(--text); }
+
+/* ============================================================
+   FOOTER
+============================================================ */
+footer {
+  position: relative; z-index: 1;
+  border-top: 1px solid var(--border);
+  padding: 24px 48px; text-align: center; font-size: 11px; color: #2a2a2a;
+  letter-spacing: 0.5px;
+}
+footer a { color: #3a3a3a; text-decoration: none; }
+
+/* ============================================================
+   CONTACT MODAL
+============================================================ */
+.contact-overlay {
+  position: fixed; inset: 0; z-index: 500;
+  background: rgba(0,0,0,0.85); backdrop-filter: blur(10px);
+  display: flex; align-items: center; justify-content: center; padding: 20px;
+  opacity: 0; pointer-events: none; transition: opacity 0.3s;
+}
+.contact-overlay.open { opacity: 1; pointer-events: all; }
+
+.contact-modal {
+  background: var(--b1); border: 1px solid var(--border2);
+  width: 100%; max-width: 460px; padding: 40px;
+  position: relative; transform: translateY(28px);
+  transition: transform 0.35s cubic-bezier(0.4,0,0.2,1);
+  max-height: 92vh; overflow-y: auto;
+  box-shadow: 0 24px 80px rgba(0,0,0,0.8), 0 0 0 1px rgba(214,16,32,0.1);
+}
+.contact-overlay.open .contact-modal { transform: translateY(0); }
+
+.modal-close {
+  position: absolute; top: 14px; left: 14px;
+  background: transparent; border: 1px solid transparent; color: #444;
+  font-size: 18px; line-height: 1; padding: 6px 10px; cursor: pointer;
+  transition: all 0.2s; border-radius: 2px;
+}
+.modal-close:hover { color: var(--white); border-color: var(--border2); background: var(--b3); }
+
+.modal-tag { font-size: 10px; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; color: var(--red); margin-bottom: 10px; }
+.modal-title { font-size: 22px; font-weight: 900; color: var(--white); line-height: 1.2; margin-bottom: 6px; }
+.modal-sub   { font-size: 14px; color: #555; margin-bottom: 28px; line-height: 1.5; }
+
+.form-group { margin-bottom: 14px; }
+.form-group label { display: block; font-size: 10px; font-weight: 800; color: #555; margin-bottom: 6px; letter-spacing: 1.5px; text-transform: uppercase; }
+.form-group input, .form-group select {
+  width: 100%; background: #000; border: 1px solid var(--border2);
+  padding: 12px 14px; color: var(--white);
+  font-family: 'Heebo', sans-serif; font-size: 15px; direction: rtl;
+  transition: border-color 0.2s, box-shadow 0.2s; appearance: none;
+}
+.form-group input::placeholder { color: #333; }
+.form-group input:focus, .form-group select:focus {
+  outline: none; border-color: var(--red);
+  box-shadow: 0 0 0 2px rgba(214,16,32,0.12);
+}
+.form-group select { cursor: pointer; color: var(--white); }
+.form-group select option { background: var(--b3); }
+
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+.form-error-msg {
+  display: none; font-size: 13px; color: #e05555;
+  background: rgba(224,85,85,0.06); border: 1px solid rgba(224,85,85,0.2);
+  padding: 10px 14px; margin-bottom: 12px; text-align: center;
+}
+
+.btn-form-submit {
+  width: 100%; margin-top: 8px;
+  background: var(--red); color: white;
+  font-family: 'Heebo', sans-serif; font-size: 16px; font-weight: 900;
+  padding: 16px; border: none; cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  box-shadow: 0 4px 20px rgba(214,16,32,0.3);
+}
+.btn-form-submit:hover    { background: var(--red-mid); box-shadow: 0 6px 28px rgba(214,16,32,0.5); }
+.btn-form-submit:disabled { background: #1a1a1a; color: #333; cursor: not-allowed; box-shadow: none; }
+.form-note { font-size: 11px; color: #333; text-align: center; margin-top: 12px; line-height: 1.5; }
+
+.success-view { text-align: center; padding: 16px 0; }
+.success-icon-wrap {
+  width: 76px; height: 76px; margin: 0 auto 24px;
+  background: rgba(61,186,122,0.06); border: 2px solid var(--green);
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+}
+.check-svg { display: block; }
+@keyframes checkDraw { from { stroke-dashoffset: 50; } to { stroke-dashoffset: 0; } }
+.check-path { stroke: var(--green); fill: none; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 50; stroke-dashoffset: 50; }
+.check-path.animate { animation: checkDraw 0.5s ease forwards 0.15s; }
+@keyframes circleGrow { from { transform: scale(0.6); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+.success-icon-wrap.animate { animation: circleGrow 0.4s cubic-bezier(0.34,1.56,0.64,1) forwards; }
+.success-title { font-size: 26px; font-weight: 900; color: var(--white); margin-bottom: 8px; }
+.success-sub   { font-size: 15px; color: #666; line-height: 1.6; }
+.success-score { margin-top: 20px; display: inline-block; background: rgba(61,186,122,0.08); border: 1px solid rgba(61,186,122,0.2); padding: 8px 20px; font-size: 13px; color: var(--green); font-weight: 600; }
+.success-close { margin-top: 28px; background: transparent; color: #555; font-family: 'Heebo', sans-serif; font-size: 13px; font-weight: 600; padding: 10px 24px; border: 1px solid var(--border); cursor: pointer; transition: all 0.2s; }
+.success-close:hover { border-color: #444; color: var(--text); }
+
+/* ============================================================
+   ANIMATIONS + RESPONSIVE
+============================================================ */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 640px) {
+  header, footer          { padding: 14px 20px; }
+  .header-contact         { flex-wrap: wrap; gap: 4px; }
+  .hero                   { padding: 60px 20px 48px; }
+  .hero::before           { font-size: 240px; }
+  .questions-wrap, #result-section { padding-left: 20px; padding-right: 20px; }
+  .progress-wrap          { padding: 10px 20px; }
+  .progress-text,
+  .progress-tally         { font-size: 13px; }
+  .q-text                 { font-size: 15px; }
+  .btn-yn                 { padding: 14px 24px; min-height: 44px; }
+  .cta-buttons            { flex-direction: column; }
+  .breakdown-grid         { grid-template-columns: 1fr; }
+  #kbd-hint               { display: none; }
+  .score-num              { font-size: 60px; }
+  .result-header          { padding: 32px 20px 28px; }
+  .result-body            { padding: 24px 20px; }
+  .form-row               { grid-template-columns: 1fr; }
+  .form-group label       { font-size: 12px; }
+  .contact-modal          { padding: 28px 20px; }
+  .btn-submit             { padding: 18px 32px; width: 100%; justify-content: center; }
+  .result-actions         { flex-direction: column; }
+}
+</style>
+</head>
+<body>
+
+<div id="kbd-hint">
+  <span>מקלדת:</span>
+  <kbd class="kbd">Y</kbd><span style="font-size:11px">כן</span>
+  <kbd class="kbd">N</kbd><span style="font-size:11px">לא</span>
+</div>
+
+<header>
+  <div class="logo">
+    <div class="logo-mark">CI</div>
+    <div>
+      <div class="logo-text">Critical Impact</div>
+      <div class="logo-sub">ניהול משברי סייבר ומשא ומתן</div>
+    </div>
+  </div>
+  <div class="header-contact">
+    <span>050-822-4225</span> &nbsp;|&nbsp;
+    <a href="mailto:gal@crt-imp.com">gal@crt-imp.com</a>
+  </div>
+</header>
+
+<div class="progress-wrap">
+  <div class="progress-bar-track">
+    <div class="progress-bar-fill" id="progressBar" style="width:0%"></div>
+  </div>
+  <div class="progress-text"  id="progressText">0 מתוך 11</div>
+  <div class="progress-tally" id="progressTally">0</div>
+</div>
+
+<section class="hero">
+  <div class="hero-glow"></div>
+  <div class="hero-badge">CYBER READINESS TEST</div>
+  <h1>האם הארגון שלך<br>באמת מוכן <span>למתקפת סייבר</span>?</h1>
+  <div class="hero-divider">
+    <p class="hero-sub">רוב הארגונים מגלים את הפערים רק <strong>אחרי האירוע</strong>.<br><span class="hero-sub-stats">11 שאלות. 3 דקות. תשובה ברורה.</span></p>
+  </div>
+  <div class="hero-note">ענו על כל שאלה — בסוף תקבלו הערכה מיידית והמלצה</div>
+</section>
+
+<div class="questions-wrap" id="questionsWrap">
+
+  <div class="section-label">
+    <div class="section-label-bar"></div>
+    <div class="section-label-text">היסטוריה ומוכנות</div>
+    <div class="section-label-line"></div>
+  </div>
+
+  <div class="question-card active-question" data-q="1" style="animation-delay:0.05s">
+    <div class="q-num">01</div>
+    <div style="flex:1">
+      <div class="q-text">עברה יותר משנה מאז <strong>התרגיל האחרון</strong> שלך — או שלא היה תרגיל כלל?</div>
+      <div class="q-buttons">
+        <button class="btn-yn" data-q="1" data-val="yes">כן</button>
+        <button class="btn-yn" data-q="1" data-val="no">לא</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="question-card" data-q="2" style="animation-delay:0.1s">
+    <div class="q-num">02</div>
+    <div style="flex:1">
+      <div class="q-text"><strong>מנהלים מרכזיים</strong> הוחלפו מאז התרגיל האחרון (CISO, CIO, CEO, CFO)?</div>
+      <div class="q-buttons">
+        <button class="btn-yn" data-q="2" data-val="yes">כן</button>
+        <button class="btn-yn" data-q="2" data-val="no">לא</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="question-card" data-q="3" style="animation-delay:0.15s">
+    <div class="q-num">03</div>
+    <div style="flex:1">
+      <div class="q-text">הארגון עבר <strong>שינוי טכנולוגי משמעותי</strong> — מעבר לענן, רכישה, מיזוג, מערכת חדשה?</div>
+      <div class="q-buttons">
+        <button class="btn-yn" data-q="3" data-val="yes">כן</button>
+        <button class="btn-yn" data-q="3" data-val="no">לא</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-label">
+    <div class="section-label-bar"></div>
+    <div class="section-label-text">חשיפה וסביבה</div>
+    <div class="section-label-line"></div>
+  </div>
+
+  <div class="question-card" data-q="4" style="animation-delay:0.2s">
+    <div class="q-num">04</div>
+    <div style="flex:1">
+      <div class="q-text">יש לך <strong>ספקים חיצוניים</strong> שיושבים על רשת הארגון או מחוברים למערכות קריטיות?</div>
+      <div class="q-buttons">
+        <button class="btn-yn" data-q="4" data-val="yes">כן</button>
+        <button class="btn-yn" data-q="4" data-val="no">לא</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="question-card" data-q="5" style="animation-delay:0.25s">
+    <div class="q-num">05</div>
+    <div style="flex:1">
+      <div class="q-text">ידוע לך שגופים מ<strong>הסקטור שלך</strong> חוו בשנתיים האחרונות מתקפת סייבר — הצפנה, דלף מידע, או מתקפת שרשרת אספקה?</div>
+      <div class="q-buttons">
+        <button class="btn-yn" data-q="5" data-val="yes">כן</button>
+        <button class="btn-yn" data-q="5" data-val="no">לא</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="question-card" data-q="6" style="animation-delay:0.3s">
+    <div class="q-num">06</div>
+    <div style="flex:1">
+      <div class="q-text">ה<strong>רגולטור שלך</strong> — בנק ישראל, רשות ניירות ערך, ביטוח — ציפה לראות תרגול מסודר?</div>
+      <div class="q-buttons">
+        <button class="btn-yn" data-q="6" data-val="yes">כן</button>
+        <button class="btn-yn" data-q="6" data-val="no">לא</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-label">
+    <div class="section-label-bar"></div>
+    <div class="section-label-text">נהלים ויכולות</div>
+    <div class="section-label-line"></div>
+  </div>
+
+  <div class="question-card" data-q="7" style="animation-delay:0.35s">
+    <div class="q-num">07</div>
+    <div style="flex:1">
+      <div class="q-text">ה-<strong>IRP שלך לא עודכן</strong> בשנה האחרונה — או שאין IRP מסודר כלל?</div>
+      <div class="q-buttons">
+        <button class="btn-yn" data-q="7" data-val="yes">כן</button>
+        <button class="btn-yn" data-q="7" data-val="no">לא</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="question-card" data-q="8" style="animation-delay:0.4s">
+    <div class="q-num">08</div>
+    <div style="flex:1">
+      <div class="q-text">לא ידוע לך בוודאות <strong>מי מקבל החלטות</strong> בשעת אירוע — מעבר לצוות ה-IT?</div>
+      <div class="q-buttons">
+        <button class="btn-yn" data-q="8" data-val="yes">כן</button>
+        <button class="btn-yn" data-q="8" data-val="no">לא</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="question-card" data-q="9" style="animation-delay:0.45s">
+    <div class="q-num">09</div>
+    <div style="flex:1">
+      <div class="q-text">מעולם לא בדקתם כיצד <strong>ההנהלה הבכירה מתפקדת תחת לחץ</strong> של אירוע סייבר אמיתי?</div>
+      <div class="q-buttons">
+        <button class="btn-yn" data-q="9" data-val="yes">כן</button>
+        <button class="btn-yn" data-q="9" data-val="no">לא</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-label">
+    <div class="section-label-bar"></div>
+    <div class="section-label-text">ביטוח ומשבר</div>
+    <div class="section-label-line"></div>
+  </div>
+
+  <div class="question-card" data-q="10" style="animation-delay:0.5s">
+    <div class="q-num">10</div>
+    <div style="flex:1">
+      <div class="q-text">יש לך <strong>כיסוי ביטוח סייבר</strong> — אך אינך יודע בדיוק מה הוא דורש ממך להוכיח בשעת אירוע?</div>
+      <div class="q-buttons">
+        <button class="btn-yn" data-q="10" data-val="yes">כן</button>
+        <button class="btn-yn" data-q="10" data-val="no">לא</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="question-card" data-q="11" style="animation-delay:0.55s">
+    <div class="q-num">11</div>
+    <div style="flex:1">
+      <div class="q-text">אם מחר בבוקר תקבל שיחה שהמערכות הוצפנו — <strong>אינך יודע בוודאות מה הצעד הראשון</strong> שלך?</div>
+      <div class="q-buttons">
+        <button class="btn-yn" data-q="11" data-val="yes">כן</button>
+        <button class="btn-yn" data-q="11" data-val="no">לא</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="submit-wrap" id="submitWrap">
+    <div class="submit-note">יש לענות על כל 11 השאלות לפני קבלת הניתוח</div>
+    <button class="btn-submit" id="submitBtn" disabled onclick="showResult()">
+      קבלו את הניתוח שלכם ←
+    </button>
+  </div>
+</div>
+
+<section id="result-section">
+  <div class="result-box">
+    <div class="result-header" id="resultHeader">
+      <div class="score-ring-wrap">
+        <svg class="ring-svg" width="180" height="180" viewBox="0 0 180 180">
+          <circle class="ring-bg"   cx="90" cy="90" r="75"/>
+          <circle class="ring-fill" cx="90" cy="90" r="75" id="ringFill"/>
+        </svg>
+        <div class="score-overlay">
+          <div class="score-num" id="resultScore">0</div>
+          <div class="score-denom">מתוך 11</div>
+        </div>
+      </div>
+      <div class="result-verdict" id="resultVerdict"></div>
+      <div class="result-time"   id="resultTime"></div>
+    </div>
+
+    <div class="result-body" id="resultBody">
+      <p class="result-text" id="resultText"></p>
+
+      <div class="breakdown-grid">
+        <div class="breakdown-card">
+          <div class="breakdown-label">היסטוריה ומוכנות</div>
+          <div class="breakdown-bar-track"><div class="breakdown-bar-fill" id="bar1"></div></div>
+          <div class="breakdown-score" id="bscore1">0 <span>מתוך 3</span></div>
+        </div>
+        <div class="breakdown-card">
+          <div class="breakdown-label">חשיפה וסביבה</div>
+          <div class="breakdown-bar-track"><div class="breakdown-bar-fill" id="bar2"></div></div>
+          <div class="breakdown-score" id="bscore2">0 <span>מתוך 3</span></div>
+        </div>
+        <div class="breakdown-card">
+          <div class="breakdown-label">נהלים ויכולות</div>
+          <div class="breakdown-bar-track"><div class="breakdown-bar-fill" id="bar3"></div></div>
+          <div class="breakdown-score" id="bscore3">0 <span>מתוך 3</span></div>
+        </div>
+        <div class="breakdown-card">
+          <div class="breakdown-label">ביטוח ומשבר</div>
+          <div class="breakdown-bar-track"><div class="breakdown-bar-fill" id="bar4"></div></div>
+          <div class="breakdown-score" id="bscore4">0 <span>מתוך 2</span></div>
+        </div>
+      </div>
+
+      <div class="cta-block" id="ctaBlock">
+        <div class="cta-title" id="ctaTitle"></div>
+        <div class="cta-sub"   id="ctaSub"></div>
+        <div class="cta-buttons">
+          <a href="https://calendly.com/gal-crt-imp" class="cta-btn-primary" target="_blank"
+            onclick="window.lintrk('track', { conversion_id: 27555625 })">
+            ← תיאום שיחת היכרות
+          </a>
+          <button class="cta-btn-secondary" onclick="openContactForm()">
+            השארת פרטים ליצירת קשר
+          </button>
+        </div>
+        <div class="divider-contact">
+          <span>050-822-4225</span>
+          <span><a href="mailto:gal@crt-imp.com">gal@crt-imp.com</a></span>
+          <span><a href="https://www.crt-imp.com" target="_blank">crt-imp.com</a></span>
+        </div>
+      </div>
+
+      <div class="result-actions">
+        <button class="btn-share" id="shareBtn" onclick="shareResult()">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+          שתף
+        </button>
+        <button class="btn-reset" onclick="resetQuiz()">↺ ענה מחדש</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© Critical Impact בע"מ &nbsp;|&nbsp; ניהול משברי סייבר ומשא ומתן &nbsp;|&nbsp; <a href="https://www.crt-imp.com">crt-imp.com</a></p>
+</footer>
+
+<!-- CONTACT MODAL -->
+<div class="contact-overlay" id="contactOverlay" onclick="overlayClick(event)">
+  <div class="contact-modal" id="contactModal">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div id="formView">
+      <div class="modal-tag">יצירת קשר</div>
+      <div class="modal-title">נשמח לחזור אליכם</div>
+      <div class="modal-sub">השאירו פרטים — ניצור קשר תוך יום עסקים</div>
+      <div id="formError" class="form-error-msg">אירעה שגיאה. אנא נסו שוב.</div>
+      <form id="contactForm" onsubmit="handleFormSubmit(event)" novalidate>
+        <input type="hidden" name="_subject"     value="פנייה חדשה מהשאלון — Critical Impact">
+        <input type="hidden" name="quiz_score"   id="hiddenScore">
+        <input type="hidden" name="quiz_verdict" id="hiddenVerdict">
+        <div class="form-group">
+          <label for="fieldName">שם מלא *</label>
+          <input type="text" id="fieldName" name="name" required placeholder="ישראל ישראלי" autocomplete="name">
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="fieldCompany">חברה *</label>
+            <input type="text" id="fieldCompany" name="company" required placeholder="שם הארגון">
+          </div>
+          <div class="form-group">
+            <label for="fieldRole">תפקיד</label>
+            <select id="fieldRole" name="role">
+              <option value="">בחרו תפקיד</option>
+              <option>CEO / מנכ"ל</option>
+              <option>CISO / מנהל אבטחת מידע</option>
+              <option>CIO / מנמ"ר</option>
+              <option>CTO</option>
+              <option>CFO</option>
+              <option>מנהל IT</option>
+              <option>אחר</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="fieldPhone">טלפון *</label>
+            <input type="tel" id="fieldPhone" name="phone" required placeholder="050-0000000" autocomplete="tel" dir="ltr">
+          </div>
+          <div class="form-group">
+            <label for="fieldEmail">אימייל *</label>
+            <input type="email" id="fieldEmail" name="email" required placeholder="name@company.com" autocomplete="email" dir="ltr">
+          </div>
+        </div>
+        <button type="submit" class="btn-form-submit" id="formSubmitBtn">שלחו את הפרטים ←</button>
+        <p class="form-note">הפרטים שלכם נשמרים בסודיות ולא יועברו לצד שלישי</p>
+      </form>
+    </div>
+    <div id="successView" style="display:none">
+      <div class="success-view">
+        <div class="success-icon-wrap" id="successIconWrap">
+          <svg class="check-svg" width="32" height="32" viewBox="0 0 32 32">
+            <path class="check-path" id="checkPath" d="M6 16 L13 23 L26 10"/>
+          </svg>
+        </div>
+        <div class="success-title">קיבלנו!</div>
+        <div class="success-sub">תודה — ניצור איתכם קשר<br>תוך יום עסקים אחד.</div>
+        <div class="success-score" id="successScore"></div>
+        <br>
+        <button class="success-close" onclick="closeModal()">סגירה</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// ─── Formspree endpoint ────────────────────────────────────────────────────
+// Replace YOUR_FORM_ID with the ID from formspree.io (e.g. "xbjvkzqp")
+const FORMSPREE_URL = 'https://formspree.io/f/xlgvlkap';
+// ───────────────────────────────────────────────────────────────────────────
+
+const answers  = {};
+const total    = 11;
+let startTime  = Date.now();
+let kbdUsed    = false;
+let modalOpen  = false;
+
+const categories = [
+  { id: 1, qs: [1,2,3],  max: 3 },
+  { id: 2, qs: [4,5,6],  max: 3 },
+  { id: 3, qs: [7,8,9],  max: 3 },
+  { id: 4, qs: [10,11],  max: 2 },
+];
+const allCards = Array.from(document.querySelectorAll('.question-card'));
+
+function addRipple(e, el) {
+  const r = document.createElement('span');
+  r.className = 'ripple-span';
+  const rect = el.getBoundingClientRect(), size = Math.max(rect.width, rect.height);
+  r.style.cssText = `width:${size}px;height:${size}px;left:${e.clientX-rect.left-size/2}px;top:${e.clientY-rect.top-size/2}px`;
+  el.appendChild(r); setTimeout(() => r.remove(), 600);
+}
+
+function getFirstUnanswered() {
+  for (let i = 1; i <= total; i++) if (!answers[String(i)]) return String(i);
+  return null;
+}
+
+function refreshActiveHighlight() {
+  const first = getFirstUnanswered();
+  allCards.forEach(c => c.classList.remove('active-question'));
+  if (first) { const c = document.querySelector(`.question-card[data-q="${first}"]`); if (c) c.classList.add('active-question'); }
+}
+
+document.querySelectorAll('.btn-yn').forEach(btn => {
+  btn.addEventListener('click', e => { addRipple(e, btn); recordAnswer(btn.dataset.q, btn.dataset.val); });
+});
+
+function recordAnswer(q, val) {
+  answers[q] = val;
+  document.querySelectorAll(`.btn-yn[data-q="${q}"]`).forEach(b => b.classList.remove('active-yes','active-no'));
+  document.querySelector(`.btn-yn[data-q="${q}"][data-val="${val}"]`).classList.add(val==='yes'?'active-yes':'active-no');
+  const card = document.querySelector(`.question-card[data-q="${q}"]`);
+  card.classList.remove('answered-yes','answered-no','active-question');
+  card.classList.add(val==='yes'?'answered-yes':'answered-no');
+  updateProgress(); refreshActiveHighlight();
+  if (!kbdUsed) { kbdUsed=true; hideKbdHint(); }
+  const next = allCards[allCards.indexOf(card)+1];
+  setTimeout(() => {
+    if (next) { next.scrollIntoView({behavior:'smooth',block:'center'}); next.classList.add('just-focused'); setTimeout(()=>next.classList.remove('just-focused'),800); }
+    else if (Object.keys(answers).length===total) document.getElementById('submitWrap').scrollIntoView({behavior:'smooth',block:'center'});
+  }, 280);
+}
+
+document.addEventListener('keydown', e => {
+  if (modalOpen||['INPUT','TEXTAREA','SELECT'].includes(e.target.tagName)) return;
+  if (document.getElementById('result-section').classList.contains('visible')) return;
+  const key = e.key.toLowerCase();
+  if (key!=='y'&&key!=='n') return;
+  const q = getFirstUnanswered(); if (!q) return;
+  recordAnswer(q, key==='y'?'yes':'no');
+});
+document.addEventListener('keydown', e => { if (e.key==='Escape'&&modalOpen) closeModal(); });
+
+function hideKbdHint() { setTimeout(()=>document.getElementById('kbd-hint').classList.add('hidden'),600); }
+setTimeout(()=>document.getElementById('kbd-hint').classList.add('hidden'),6000);
+
+function updateProgress() {
+  const answered = Object.keys(answers).length;
+  const yesCount = Object.values(answers).filter(v=>v==='yes').length;
+  document.getElementById('progressBar').style.width  = (answered/total*100)+'%';
+  document.getElementById('progressText').textContent = `${answered} מתוך ${total}`;
+  document.getElementById('submitBtn').disabled        = answered<total;
+  const tally = document.getElementById('progressTally');
+  if (yesCount>0){tally.textContent=`${yesCount}`;tally.classList.add('visible');}
+  else tally.classList.remove('visible');
+}
+
+function animateCount(el, target, duration) {
+  const start = Date.now();
+  (function step(){
+    const p = Math.min((Date.now()-start)/duration,1);
+    el.textContent = Math.round((1-Math.pow(1-p,3))*target);
+    if(p<1) requestAnimationFrame(step);
+  })();
+}
+
+function showResult() {
+  const yesCount = Object.values(answers).filter(v=>v==='yes').length;
+  const elapsed  = Math.round((Date.now()-startTime)/1000);
+  const min = Math.floor(elapsed/60), sec = elapsed%60;
+  document.getElementById('resultTime').textContent = min>0?`הושלם ב-${min}:${String(sec).padStart(2,'0')} דקות`:`הושלם ב-${sec} שניות`;
+
+  const header=document.getElementById('resultHeader'), verdict=document.getElementById('resultVerdict'),
+        ring=document.getElementById('ringFill'), scoreEl=document.getElementById('resultScore');
+  header.className='result-header'; verdict.className='result-verdict'; ring.className='ring-fill';
+
+  const offset = 471-(yesCount/11)*471;
+  const configs = {
+    high:{ lc:'level-high', vc:'verdict-high', rc:'ring-high', vt:'תרגיל שולחני הוא צורך מיידי',
+      tx:`עניתם "כן" על ${yesCount} מתוך 11 שאלות — רמת החשיפה והפערים שזיהיתם מצביעים על כך שתרגיל שולחני אינו אירוע שנתי שכדאי לתכנן — הוא <strong>צורך תפעולי עכשיו</strong>.<br><br>ארגונים עם פרופיל דומה שפגשנו אחרי אירוע אמרו שידעו שהם צריכים לתרגל — פשוט לא מצאו זמן. הזמן הנכון הוא לפני האירוע, לא אחריו.`,
+      ct:'בואו נדבר — עוד השבוע', cs:'שיחת היכרות קצרה של 20 דקות — נבין יחד מה הפורמט המתאים לכם.' },
+    mid:{ lc:'level-mid', vc:'verdict-mid', rc:'ring-mid', vt:'ישנם פערים שכדאי לטפל בהם',
+      tx:`עניתם "כן" על ${yesCount} מתוך 11 שאלות — יש פערים ממוקדים שמומלץ לטפל בהם לפני שמתזמנים תרגיל מלא.<br><br>שיחה קצרה יכולה לעזור לנו להבין אם כדאי להתחיל בתרגיל ממוקד, בעדכון IRP, או בשניהם.`,
+      ct:'נשמח לשיחת ייעוץ קצרה', cs:'ניתוח הפערים שזיהיתם — ותכנית פעולה ריאלית.' },
+    low:{ lc:'level-low', vc:'verdict-low', rc:'ring-low', vt:'רמת הכשירות שלך גבוהה — כל הכבוד',
+      tx:`עניתם "כן" על ${yesCount} בלבד מתוך 11 שאלות. אתם במצב טוב יחסית.<br><br>גם כך — תרגיל שולחני תקופתי הוא הדרך הטובה ביותר לשמר את רמת הכשירות.`,
+      ct:'רוצה לשמור על הרמה?', cs:'תרגיל שנתי שמותאם לגודל ולסיכונים שלכם.' }
+  };
+  const cfg = yesCount>=7?configs.high:yesCount>=4?configs.mid:configs.low;
+  header.classList.add(cfg.lc); verdict.classList.add(cfg.vc); ring.classList.add(cfg.rc);
+  verdict.textContent=cfg.vt;
+  document.getElementById('resultText').innerHTML=cfg.tx;
+  document.getElementById('ctaTitle').textContent=cfg.ct;
+  document.getElementById('ctaSub').textContent=cfg.cs;
+
+  categories.forEach(cat=>{
+    const s=cat.qs.filter(q=>answers[String(q)]==='yes').length, p=(s/cat.max)*100;
+    const cls=p>=67?'fill-red':p>=34?'fill-gold':'fill-green';
+    document.getElementById(`bar${cat.id}`).className=`breakdown-bar-fill ${cls}`;
+    document.getElementById(`bscore${cat.id}`).innerHTML=`${s} <span>מתוך ${cat.max}</span>`;
+    setTimeout(()=>{document.getElementById(`bar${cat.id}`).style.width=p+'%';},500);
+  });
+
+  document.getElementById('submitWrap').style.display='none';
+  document.getElementById('questionsWrap').classList.add('dimmed');
+  const rs=document.getElementById('result-section');
+  rs.className='visible';
+  setTimeout(()=>rs.scrollIntoView({behavior:'smooth',block:'start'}),50);
+  scoreEl.textContent='0';
+  setTimeout(()=>{ ring.style.strokeDashoffset=offset; animateCount(scoreEl,yesCount,900); },300);
+  document.querySelectorAll('#resultBody > *').forEach((el,i)=>setTimeout(()=>el.classList.add('revealed'),200+i*180));
+}
+
+function shareResult() {
+  const y=Object.values(answers).filter(v=>v==='yes').length;
+  const vt=document.getElementById('resultVerdict').textContent;
+  const text=`ניתוח מוכנות סייבר — Critical Impact\nציון: ${y}/11\n${vt}\n\nגם לך? → https://www.crt-imp.com`;
+  const btn=document.getElementById('shareBtn');
+  if(navigator.share){navigator.share({title:'ניתוח מוכנות סייבר',text}).catch(()=>{});}
+  else{navigator.clipboard.writeText(text).then(()=>{
+    btn.classList.add('copied');
+    btn.innerHTML=`<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> הועתק!`;
+    setTimeout(()=>{btn.classList.remove('copied');btn.innerHTML=`<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg> שתף`;},2500);
+  });}
+}
+
+function resetQuiz() {
+  for(const k in answers) delete answers[k];
+  document.querySelectorAll('.btn-yn').forEach(b=>b.classList.remove('active-yes','active-no'));
+  document.querySelectorAll('.question-card').forEach(c=>c.classList.remove('answered-yes','answered-no','active-question','just-focused'));
+  document.querySelectorAll('#resultBody > *').forEach(el=>el.classList.remove('revealed'));
+  document.getElementById('ringFill').style.strokeDashoffset='471';
+  document.getElementById('resultScore').textContent='0';
+  document.getElementById('progressBar').style.width='0%';
+  document.getElementById('progressText').textContent='0 מתוך 11';
+  document.getElementById('progressTally').classList.remove('visible');
+  document.getElementById('submitBtn').disabled=true;
+  document.getElementById('submitWrap').style.display='';
+  document.getElementById('questionsWrap').classList.remove('dimmed');
+  categories.forEach(cat=>{document.getElementById(`bar${cat.id}`).style.width='0%';});
+  document.getElementById('result-section').className='';
+  refreshActiveHighlight();
+  startTime=Date.now(); kbdUsed=false;
+  setTimeout(()=>document.getElementById('kbd-hint').classList.remove('hidden'),100);
+  setTimeout(()=>document.getElementById('kbd-hint').classList.add('hidden'),6100);
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function openContactForm() {
+  const y=Object.values(answers).filter(v=>v==='yes').length;
+  const vt=document.getElementById('resultVerdict').textContent;
+  document.getElementById('hiddenScore').value=`${y}/11`;
+  document.getElementById('hiddenVerdict').value=vt;
+  document.getElementById('successScore').textContent=`ציון שאלון: ${y}/11 — ${vt}`;
+  document.getElementById('formView').style.display='block';
+  document.getElementById('successView').style.display='none';
+  document.getElementById('formError').style.display='none';
+  document.getElementById('contactForm').reset();
+  document.getElementById('formSubmitBtn').disabled=false;
+  document.getElementById('formSubmitBtn').textContent='שלחו את הפרטים ←';
+  document.getElementById('checkPath').classList.remove('animate');
+  document.getElementById('successIconWrap').classList.remove('animate');
+  document.getElementById('contactOverlay').classList.add('open');
+  document.body.style.overflow='hidden'; modalOpen=true;
+  setTimeout(()=>document.getElementById('fieldName').focus(),350);
+  if(typeof window.lintrk==='function') window.lintrk('track',{conversion_id:27555625});
+}
+function overlayClick(e){if(e.target===document.getElementById('contactOverlay'))closeModal();}
+function closeModal(){document.getElementById('contactOverlay').classList.remove('open');document.body.style.overflow='';modalOpen=false;}
+
+async function handleFormSubmit(e) {
+  e.preventDefault();
+  const btn=document.getElementById('formSubmitBtn');
+  const name=document.getElementById('fieldName').value.trim(),
+        company=document.getElementById('fieldCompany').value.trim(),
+        phone=document.getElementById('fieldPhone').value.trim(),
+        email=document.getElementById('fieldEmail').value.trim();
+  if(!name||!company||!phone||!email){
+    document.getElementById('formError').textContent='אנא מלאו את כל שדות החובה.';
+    document.getElementById('formError').style.display='block'; return;
+  }
+  btn.disabled=true; btn.textContent='שולח...';
+  document.getElementById('formError').style.display='none';
+  try {
+    const role  = document.getElementById('fieldRole').value;
+    const score = document.getElementById('hiddenScore').value;
+    const verdict = document.getElementById('hiddenVerdict').value;
+    if(FORMSPREE_URL.includes('YOUR_FORM_ID')){
+      // Demo mode — simulate success (replace YOUR_FORM_ID to go live)
+      await new Promise(r=>setTimeout(r,900));
+    } else {
+      const res = await fetch(FORMSPREE_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({name, company, role, phone, email, score, verdict})
+      });
+      if(!res.ok) throw new Error('network');
+    }
+    document.getElementById('formView').style.display='none';
+    document.getElementById('successView').style.display='block';
+    setTimeout(()=>{document.getElementById('successIconWrap').classList.add('animate');setTimeout(()=>document.getElementById('checkPath').classList.add('animate'),200);},50);
+  } catch {
+    btn.disabled=false; btn.textContent='שלחו את הפרטים ←';
+    document.getElementById('formError').textContent='אירעה שגיאה בשליחה. אנא נסו שוב.';
+    document.getElementById('formError').style.display='block';
+  }
+}
+
+refreshActiveHighlight();
+</script>
+</body>
+</html>
