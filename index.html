@@ -13,7 +13,7 @@
 
 <!-- LinkedIn Insight Tag -->
 <script type="text/javascript">
-  _linkedin_partner_id = "27555625";
+  _linkedin_partner_id = "9967857";
   window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
   window._linkedin_data_partner_ids.push(_linkedin_partner_id);
 </script>
@@ -28,7 +28,7 @@
     s.parentNode.insertBefore(b, s);
   })(window.lintrk);
 </script>
-<noscript><img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=27555625&fmt=gif"/></noscript>
+<noscript><img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=9967857&fmt=gif"/></noscript>
 
 <style>
 /* ============================================================
@@ -615,23 +615,16 @@ footer a { color: #3a3a3a; text-decoration: none; }
 
 @media (max-width: 640px) {
   header, footer          { padding: 14px 20px; }
-  .header-contact         { flex-wrap: wrap; gap: 4px; }
-  .hero                   { padding: 60px 20px 48px; }
+  .hero                   { padding: 64px 24px 48px; }
   .hero::before           { font-size: 240px; }
   .questions-wrap, #result-section { padding-left: 20px; padding-right: 20px; }
   .progress-wrap          { padding: 10px 20px; }
-  .progress-text,
-  .progress-tally         { font-size: 13px; }
   .q-text                 { font-size: 15px; }
-  .btn-yn                 { padding: 14px 24px; min-height: 44px; }
   .cta-buttons            { flex-direction: column; }
   .breakdown-grid         { grid-template-columns: 1fr; }
   #kbd-hint               { display: none; }
   .score-num              { font-size: 60px; }
-  .result-header          { padding: 32px 20px 28px; }
-  .result-body            { padding: 24px 20px; }
   .form-row               { grid-template-columns: 1fr; }
-  .form-group label       { font-size: 12px; }
   .contact-modal          { padding: 28px 20px; }
   .btn-submit             { padding: 18px 32px; width: 100%; justify-content: center; }
   .result-actions         { flex-direction: column; }
@@ -655,7 +648,7 @@ footer a { color: #3a3a3a; text-decoration: none; }
     </div>
   </div>
   <div class="header-contact">
-    <span>050-822-4225</span> &nbsp;|&nbsp;
+    <a href="tel:+972508224225">050-822-4225</a> &nbsp;|&nbsp;
     <a href="mailto:gal@crt-imp.com">gal@crt-imp.com</a>
   </div>
 </header>
@@ -665,7 +658,7 @@ footer a { color: #3a3a3a; text-decoration: none; }
     <div class="progress-bar-fill" id="progressBar" style="width:0%"></div>
   </div>
   <div class="progress-text"  id="progressText">0 מתוך 11</div>
-  <div class="progress-tally" id="progressTally">0</div>
+  <div class="progress-tally" id="progressTally">0 ✓</div>
 </div>
 
 <section class="hero">
@@ -881,7 +874,7 @@ footer a { color: #3a3a3a; text-decoration: none; }
         <div class="cta-sub"   id="ctaSub"></div>
         <div class="cta-buttons">
           <a href="https://calendly.com/gal-crt-imp" class="cta-btn-primary" target="_blank"
-            onclick="window.lintrk('track', { conversion_id: 27555625 })">
+>
             ← תיאום שיחת היכרות
           </a>
           <button class="cta-btn-secondary" onclick="openContactForm()">
@@ -889,9 +882,9 @@ footer a { color: #3a3a3a; text-decoration: none; }
           </button>
         </div>
         <div class="divider-contact">
-          <span>050-822-4225</span>
-          <span><a href="mailto:gal@crt-imp.com">gal@crt-imp.com</a></span>
-          <span><a href="https://www.crt-imp.com" target="_blank">crt-imp.com</a></span>
+          <span>📞 <a href="tel:+972508224225">050-822-4225</a></span>
+          <span>✉️ <a href="mailto:gal@crt-imp.com">gal@crt-imp.com</a></span>
+          <span>🌐 <a href="https://www.crt-imp.com" target="_blank">crt-imp.com</a></span>
         </div>
       </div>
 
@@ -1056,7 +1049,7 @@ function updateProgress() {
   document.getElementById('progressText').textContent = `${answered} מתוך ${total}`;
   document.getElementById('submitBtn').disabled        = answered<total;
   const tally = document.getElementById('progressTally');
-  if (yesCount>0){tally.textContent=`${yesCount}`;tally.classList.add('visible');}
+  if (yesCount>0){tally.textContent=`${yesCount} ✓`;tally.classList.add('visible');}
   else tally.classList.remove('visible');
 }
 
@@ -1168,7 +1161,6 @@ function openContactForm() {
   document.getElementById('contactOverlay').classList.add('open');
   document.body.style.overflow='hidden'; modalOpen=true;
   setTimeout(()=>document.getElementById('fieldName').focus(),350);
-  if(typeof window.lintrk==='function') window.lintrk('track',{conversion_id:27555625});
 }
 function overlayClick(e){if(e.target===document.getElementById('contactOverlay'))closeModal();}
 function closeModal(){document.getElementById('contactOverlay').classList.remove('open');document.body.style.overflow='';modalOpen=false;}
